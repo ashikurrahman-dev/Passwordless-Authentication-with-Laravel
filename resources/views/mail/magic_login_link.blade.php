@@ -1,7 +1,7 @@
 <x-mail::message>
 Your magic login link.
 
-<x-mail::button :url="''">
+<x-mail::button :url="$url">
 Log In
 </x-mail::button>
 

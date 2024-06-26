@@ -8,6 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\URL;
 
 class MagicLoginLink extends Mailable
 {
@@ -16,9 +17,10 @@ class MagicLoginLink extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public $url;
+    public function __construct($email)
     {
-        //
+        $this->url = URL::temporarySignedRoute('auth.session', now()->addMinutes(1), $email);
     }
 
     /**
