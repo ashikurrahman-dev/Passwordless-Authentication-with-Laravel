@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Mail\MagicLoginLink;
+use App\Http\Requests\LoginRequest;
+use Illuminate\Support\Facades\Mail;
 
 class LoginController extends Controller
 {
@@ -10,7 +12,10 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function store(Request $request){
+    public function store(LoginRequest $request){
         
+        Mail::to($request->email)->send(new MagicLoginLink());
+
+        return back()->with('success', 'Magic login link has been send in your mail.');
     }
 }

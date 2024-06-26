@@ -8,8 +8,8 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div>
-        <div>
+    <div class="bg-slate-100 font-sans">
+        <div class="flex items-center justify-center min-h-screen">
             {{ $slot }}
         </div>
     </div>
