@@ -7,7 +7,7 @@
         @guest
         <div class="space-x-3">
             <a href="{{ route('auth.login') }}" class="hover:text-blue-700 text-2xl">Login</a>
-            <a href="" class="hover:text-blue-700 text-2xl">Register</a>
+            <a href="{{ route('auth.register') }}" class="hover:text-blue-700 text-2xl">Register</a>
         </div>
         @endguest
     </div>

@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\URL;
 
-class MagicLoginLink extends Mailable
+class MagicLoginLink extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
