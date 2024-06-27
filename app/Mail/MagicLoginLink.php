@@ -20,7 +20,7 @@ class MagicLoginLink extends Mailable
     public $url;
     public function __construct($email)
     {
-        $this->url = URL::temporarySignedRoute('auth.session', now()->addMinutes(1), $email);
+        $this->url = URL::temporarySignedRoute('auth.session', now()->addMinutes(5), $email);
     }
 
     /**
